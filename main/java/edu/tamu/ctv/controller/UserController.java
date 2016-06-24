@@ -29,12 +29,17 @@ import edu.tamu.ctv.entity.Users;
 import edu.tamu.ctv.repository.UsersRepository;
 import edu.tamu.ctv.service.UsersService;
 import edu.tamu.ctv.service.validator.UserFormValidator;
+import edu.tamu.ctv.utils.session.ProjectAuthentication;
 
 @Controller
 public class UserController
 {
 	private final Logger logger = LoggerFactory.getLogger(UserController.class);
 
+	
+	@Autowired		// This a few lines were added by LD.
+	private ProjectAuthentication projectAuthentication;
+	
 	@Autowired
 	private UsersRepository userRepository;
 	@Autowired
@@ -58,6 +63,8 @@ public class UserController
 	{
 		logger.debug("showAllUsers()");
 		model.addAttribute("users", userRepository.findAll());
+		System.out.println("\n\nLogin UserCon: " + projectAuthentication.getCurrentUser().getLogin() + "\n\n");
+		model.addAttribute("user_id", projectAuthentication.getCurrentUser().getLogin());
 		return "users/list";
 	}
 	
@@ -70,6 +77,7 @@ public class UserController
 	public String saveOrUpdateUser(@ModelAttribute("userForm") @Validated Users user, BindingResult result, Model model, final RedirectAttributes redirectAttributes)
 	{
 		logger.debug("saveOrUpdateUser() : {}", user);
+		
 
 		if (result.hasErrors())
 		{

@@ -69,6 +69,8 @@
 		   </table>
 
 		   <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
+		   name="${_csrf.parameterName}"<br> value="${_csrf.token}" 
+		   <br>LoginUrl = '${loginUrl}' <br>
 		</form>
 	</div>
 

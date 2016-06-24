@@ -15,11 +15,15 @@ import edu.tamu.ctv.utils.session.ProjectAuthentication;
 public class LoginController
 {
 	@Autowired
+	// public ProjectAuthentication projectAuthentication;
 	private ProjectAuthentication projectAuthentication;
 	
-	@RequestMapping(value = "/login", method = RequestMethod.GET)
+	// @RequestMapping(value = "/login", method = RequestMethod.POST) 
+	@RequestMapping(value = "/login", method = RequestMethod.GET) 
 	public ModelAndView login(@RequestParam(value = "error", required = false) String error, @RequestParam(value = "logout", required = false) String logout)
 	{
+		System.out.println("\n\nPost is here.\n\n");
+		System.out.println("\n\nLogin: " + projectAuthentication.getCurrentUser().getLogin() + "\n\n");
 		ModelAndView model = new ModelAndView();
 		if (error != null)
 		{
@@ -43,6 +47,7 @@ public class LoginController
 	@RequestMapping(value = "/currentuser", method = RequestMethod.GET)
 	public @ResponseBody String currentUser(ModelMap model)
 	{
+		System.out.println("\n\nLogin is: ." + projectAuthentication.getCurrentUser().getLogin() + "\n\n");
 		return projectAuthentication.getCurrentUser().getLogin();
 
 	}

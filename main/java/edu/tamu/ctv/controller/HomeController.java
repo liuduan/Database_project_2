@@ -2,6 +2,7 @@ package edu.tamu.ctv.controller;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -20,9 +21,18 @@ public class HomeController
 {
 	private final Logger logger = LoggerFactory.getLogger(HomeController.class);
 	
+	@Autowired		// This a few lines were added by LD.
+	private ProjectAuthentication projectAuthentication;
+	
+	
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String index(Model model)
 	{
+		System.out.println("\n\nLogin @ home: " + projectAuthentication.getCurrentUser().getLogin() + "\n\n");
+		String id = projectAuthentication.getCurrentUser().getLogin();
+
+		
+		
 		logger.debug("index()");
 		return "/home";
 	}

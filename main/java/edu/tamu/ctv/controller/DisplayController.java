@@ -6,25 +6,21 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 @Controller
-public class DogsController {
+public class DisplayController {
+
+
 	// private final Logger logger = LoggerFactory.getLogger(DogsController.class);
 	
-	@RequestMapping(value="/dog_input", method = RequestMethod.GET)			
+	@RequestMapping(value="/display", method = RequestMethod.GET)			
 		//value="/dog_input" indicate you wanted address, 
 		//here it is http://localhost:8080/database_project/dog_input
 	public String getNames(Model model) {
 		
-		//logger.debug("getNames()");
+		// logger.debug("getNames()");
 		
-		return "/dogs";				// put the jsp file path here.
+		return "/display";				// put the jsp file path here.
 	}
-	
-//	@RequestMapping(value="/dog_test", method=RequestMethod.POST)
-//	public String dogTest(Model model) {
-//		
-//		
-//		return "/dogs?gdfgdfgd";
-//	}
 	
 
 }
+

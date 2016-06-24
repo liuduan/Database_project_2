@@ -9,7 +9,7 @@
 <jsp:include page="../fragments/header.jsp" />
 
 <body>
-
+User_id: ${user_id}
 	<div class="container">
 
 		<h1>All Users</h1>
