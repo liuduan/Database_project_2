@@ -8,7 +8,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-display.jsp, Dog name is:<br></br>
+display.jsp, Dog name is:　<br></br>
 	dog_name: ${dog_name}<br></br>
 	<%
 		String display_dog_name = (String) request.getAttribute("send_dog_name");
