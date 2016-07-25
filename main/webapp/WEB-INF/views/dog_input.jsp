@@ -17,9 +17,11 @@ Get Method
 
 =========================================
 <br></br>Post test:<br></br>
-<form name="dogs2" action="dog_test"  method='post'>	<!-- need csrf token for post method -->
+CSRF Cookie Name: ${_csrf.parameterName} <br>
+value = ${_csrf.token} <br><br>
+<form name="dogs2" action="dog_test" method='post'>	<!-- need csrf token for post method -->
 			<input type="text" name="dog_name" />
-			<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
+			<input	type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
 			<input type="submit" />
 			<button class="btn btn-primary" onclick="var data = {'orderid[]' : currentOrders , 'componentid[]' : currentComponents }; post('/database_project/export/byparams', data, 'GET', '${_csrf.parameterName}', '${_csrf.token}')" title="Export"><span class="glyphicon glyphicon-export"></span></button>
 						

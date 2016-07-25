@@ -13,6 +13,9 @@
 
 <body>
 
+CSRF Cookie Name: ${_csrf.parameterName} <br>
+value = ${_csrf.token} <br><br>
+
 	<div class="container">
 		<div class="row">
 			<div class="col-md-12">
