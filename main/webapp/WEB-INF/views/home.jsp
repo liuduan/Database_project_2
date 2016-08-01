@@ -75,8 +75,11 @@ border-color:#0000CC;
 
 
 <body>
+<spring:url value="http://google.com" var="G-value" />
+<a href="${G-value}">Google page</a>
+<spring:url value="http://google.com" var="G-value2" />Hello
+<a href="${G-value2}">Google page 2</a>
 
-<jsp:include page="fragments/header.jsp" />
 <spring:url value="/profile" var="urlProfile" />
 <spring:url value="/import" var="urlImport" />
 <spring:url value="/export" var="urlExport" />
@@ -162,7 +165,6 @@ border-color:#0000CC;
         </div>
     </div>
 <jsp:include page="fragments/footer.jsp" />
-
 
 </body>
 </html>

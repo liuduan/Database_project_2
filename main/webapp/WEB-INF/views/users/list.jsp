@@ -42,7 +42,7 @@ User_id: ${user_id}
 				</tr>
 			</c:forEach>
 		</table>
-
+User[2].first_name: ${user[1].firstname}
 	</div>
 
 	<jsp:include page="../fragments/footer.jsp" />

@@ -12,7 +12,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
-import edu.tamu.ctv.entity.Projects;
 import edu.tamu.ctv.entity.customdefined.ContactForm;
 import edu.tamu.ctv.utils.session.ProjectAuthentication;
 
@@ -34,7 +33,8 @@ public class HomeController
 		
 		
 		logger.debug("index()");
-		return "/home";
+		// return "/Open/home";
+		return "home";
 	}
 	
 	@RequestMapping(value = "/contact", method = RequestMethod.GET)
@@ -58,6 +58,6 @@ public class HomeController
 			redirectAttributes.addFlashAttribute("css", "success");
 		}
 		
-		return "redirect:/home";
+		return "redirect:/Open/home";
 	}
 }
