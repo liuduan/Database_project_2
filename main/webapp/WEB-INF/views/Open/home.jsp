@@ -110,10 +110,11 @@ font-weight:bold;
 </head>
 <body>
 
-<a href = "login">Authorized Sign In</a>
+
 
 <div id="first-frame">
-
+<br>
+<div align="right"><a href = "login" >Sign In</a> &nbsp; &nbsp; &nbsp;</div>
 <br><br>
 
 
@@ -132,15 +133,10 @@ font-weight:bold;
 	Category Approaches For Chemical Safety
 </h3>
 
-<br><br><br><br>
+
 <div id="login-lines">
-	<div id="incorrect-password">&nbsp;	&nbsp;	&nbsp;	
-		Sorry, user name and/or Password is incorrect.
-	</div><br><br>
-	User name:	<input type="text" id="Username">
-	<br><br>
-	Password:	&nbsp;	<input type="password" id="password-input">
-	<br><br>
+
+
 </div>
 	<button id="password-submission" style="
   		width:130px;
@@ -166,10 +162,10 @@ font-weight:bold;
   		border-radius: 5px;
   		box-shadow: inset 0px 1px 0px #2ab7ec, 0px 5px 0px 0px #07526e, 0px 10px 5px #999;">
   
-  Submit</button>
+  We Are Great.</button>
 	<br><br>
 
-<br><br><br><br><br><br><br>
+<br>
 	<div id="introduction">
 		&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;	This web site is part of the New Technologies to 
 		Underpin Category Approaches and Read-across in Regulatory Programmes at Texas A&M University.

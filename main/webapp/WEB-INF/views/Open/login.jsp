@@ -110,8 +110,9 @@ font-weight:bold;
 </head>
 <body onload='document.loginForm.username.focus();'>
 
-
-	<h1>Spring Security Custom Login Form (Annotation)</h1>
+<div id = Container-login-page align="center">
+	<br><br><br><br>
+	<h1>Category Approaches For Chemical Safety</h1>
 
 	<div id="login-box">
 
@@ -138,16 +139,18 @@ font-weight:bold;
 			</tr>
 			<tr>
 		        <td colspan='2'>
+		        	<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
 	                <input name="submit" type="submit" value="submit" />
 	            </td>
 			</tr>
 		   </table>
 
 		   <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
-		   name="${_csrf.parameterName}"<br> value="${_csrf.token}" 
+		   <br><br><br>Name = "${_csrf.parameterName}"<br> Value = "${_csrf.token}" 
 		   <br>LoginUrl = '${loginUrl}' <br>
 		</form>
 	</div>
+	</div> <!-- end of container-login-page -->
 
 </body>
 </html>
