@@ -16,15 +16,15 @@ import edu.tamu.ctv.entity.customdefined.ContactForm;
 import edu.tamu.ctv.utils.session.ProjectAuthentication;
 
 @Controller
-public class HomeController
+public class ID_HomeController
 {
-	private final Logger logger = LoggerFactory.getLogger(HomeController.class);
+	private final Logger logger = LoggerFactory.getLogger(ID_HomeController.class);
 	
 	@Autowired		// This a few lines were added by LD.
 	private ProjectAuthentication projectAuthentication;
 	
 	
-	@RequestMapping(value = {"/", "/Open/**"}, method = RequestMethod.GET)
+	@RequestMapping(value = {"/need_modification", "/Open/**/need_modification"}, method = RequestMethod.GET)
 	public String index(Model model)
 	{
 		System.out.println("\n\nLogin @ home: " + projectAuthentication.getCurrentUser().getLogin() + "\n\n");
@@ -37,14 +37,14 @@ public class HomeController
 		// return "home";
 	}
 	
-	@RequestMapping(value = "/contact", method = RequestMethod.GET)
+	@RequestMapping(value = "/contact/need modification", method = RequestMethod.GET)
 	public String showContact(Model model)
 	{
 		logger.debug("index()");
 		return "/contact";
 	}
 	
-	@RequestMapping(value = "/contact", method = RequestMethod.POST)
+	@RequestMapping(value = "/contact need modification", method = RequestMethod.POST)
 	public String sendMessage(@ModelAttribute("contactForm") @Validated ContactForm contactForm, BindingResult result, Model model, final RedirectAttributes redirectAttributes)
 	{
 		logger.debug("sendMessage() : {}", contactForm);

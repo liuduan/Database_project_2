@@ -2,6 +2,7 @@ package edu.tamu.ctv.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -19,7 +20,7 @@ public class LoginController
 	private ProjectAuthentication projectAuthentication;
 	
 	// @RequestMapping(value = "/login", method = RequestMethod.POST) 
-	@RequestMapping(value = "/login", method = RequestMethod.GET) 
+	@RequestMapping(value = {"/login", "/Open/login"}, method = RequestMethod.GET) 
 	public ModelAndView login(@RequestParam(value = "error", required = false) String error, @RequestParam(value = "logout", required = false) String logout)
 	{
 		System.out.println("\n\nPost is here.\n\n");
@@ -33,15 +34,16 @@ public class LoginController
 		{
 			model.addObject("msg", "You've been logged out successfully.");
 		}
-		model.setViewName("login");
+		model.setViewName("/Open/login");
 
 		return model;
 	}
 	
 	@RequestMapping(value = "/logout", method = RequestMethod.GET)
-	public String logout()
+	// public String logout()
+	public String index(Model model)
 	{
-		return "login";
+		return "/Open/login";
 	}
 	
 	@RequestMapping(value = "/currentuser", method = RequestMethod.GET)
