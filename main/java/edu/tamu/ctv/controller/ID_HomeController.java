@@ -24,7 +24,7 @@ public class ID_HomeController
 	private ProjectAuthentication projectAuthentication;
 	
 	
-	@RequestMapping(value = {"/need_modification", "/Open/**/need_modification"}, method = RequestMethod.GET)
+	@RequestMapping(value = "/Protected/ID_home", method = RequestMethod.GET)
 	public String index(Model model)
 	{
 		System.out.println("\n\nLogin @ home: " + projectAuthentication.getCurrentUser().getLogin() + "\n\n");
@@ -33,7 +33,7 @@ public class ID_HomeController
 		
 		
 		logger.debug("index()");
-		return "/Open/home";
+		return "/Protected/ID_home";
 		// return "home";
 	}
 	
